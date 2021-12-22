@@ -34,9 +34,9 @@ ifdef::backend-html5[]
 [source,shell]
 ----
 # Ordner erstellen
-mkdir git-lecture-notes
+mkdir git-branches
 # in den eben erstellen Ordner wechseln
-cd git-lecture-notes
+cd git-branches
 # Readme Datei mit Inhalt erstellen
 echo "# Git Lecture Notes" >> README.md
 # Github initialisieren
@@ -83,12 +83,38 @@ git config --global init.defaultBranch main
     mate id_rsa.pub
 ----
 
-kopieren Sie den geöffneten Key
+==== SSH-Key zu Github hinzufügen
 
+* kopieren Sie den geöffneten Key
+* öffnen Sie die https://github.com/settings/keys[Github SSH und GPG settings,role=external,window=_blank]
+* drücken Sie *New SSH key*
+* fügen Sie anschließend den *ganzen Text* der in den *id_rsa.pub* drinnen steht ein
 
+==== Github Arbeit mit SSH-Key Berechtigung
 
+[source,shell]
+----
+# Alten Ordner mit Token access löschen
+rm -rf git-branches
+# Die auf dem GitHub gespeicherte Version mithilfe von SSH klonen
+git clone git@github.com:<Username>/<Reponame>.git
+# Der vorherige Stand ist wiederhergestellt
+----
 
+Jeder der in den Repo-Settings -> Manage access als *Collaborator* geführt ist, kann
+mithilfe des SSH-clones so arbeiten wie der Besitzer selbst.
 
+==== Merge Conflict vermeiden (nicht fertig)
 
+[source,shell]
+----
+# Datei bearbeiten, stagen, commiten und pushen
+nano README.md
+git add README.md
+git commit -m "Readme changed"
+git push -u origin main
 
-
+# bevor seine Collaboratoren jetzt irgendetwas machen dürfen sollten sie unbedigt ..
+git pull
+# ausführen damit das Lokale Repo mit dem Remote Repo verglichen wird
+----
