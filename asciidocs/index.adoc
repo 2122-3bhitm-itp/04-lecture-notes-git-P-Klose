@@ -1,6 +1,6 @@
-= My Project
-firstname lastname
-1.0.0, yyyy-mm-dd: Some notes
+= Lecture Notes: Github
+Peter Klose
+1.0.0, 2021-12-21: Summery of most important Git commands
 ifndef::imagesdir[:imagesdir: images]
 //:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
 :sourcedir: ../src/main/java
@@ -14,8 +14,81 @@ ifdef::backend-html5[]
 // print the toc here (not at the default position)
 //toc::[]
 
-== Header 1
+== 2021-12-14
+
+=== Github repo erstellen
+
+Öffnen Sie https://github.com
+.Hier klicken für eine detaillierte Anleitung
+[%collapsible]
+====
+
+====
+* melden Sie sich mit ihrem GitHub Account an
+* drücken Sie auf den grün hinterlegten *New* Button
+* vergeben Sie einen eindeutigen Namen
+* drücken Sie auf *Create Repository*
+
+=== Arbeiten auf lokalem Repo
+
+[source,shell]
+----
+# Ordner erstellen
+mkdir git-lecture-notes
+# in den eben erstellen Ordner wechseln
+cd git-lecture-notes
+# Readme Datei mit Inhalt erstellen
+echo "# Git Lecture Notes" >> README.md
+# Github initialisieren
+git init
+# README.md zur Staging Area hinzufügen
+git add README.md
+# README.md auf lokales Repo commiten
+git commit -m "initial commit"
+
+# falls der Default branch noch nicht gesetzt ist siehe mehr unten
+
+# Verbindung mit remote Github repo erstellen
+git remote add origin https://github.com/<Username>/<Reponame>.git
+# Alles von lokalem Repo ins remote Repo pushen
+git push origin main
+----
+
+.default git config
+[%collapsible]
+====
+[source,shell]
+----
+# set Github-Username
+git config --global user.name "<username>"
+# set Github-Account-Email
+git config --global user.email "<your email>"
+# set default Branch bei git init
+git config --global init.defaultBranch main
+----
+====
+
+== 2021-12-21
+
+=== Github with SSH Accses
+
+==== SSH Keypaar erstellen
+[source,shell]
+----
+# SSH Keypaar erstellen
+    ssh-keygen -t rsa
+# in .ssh ordner wechseln
+    cd .ssh
+# den public key mit belibigem Texteditor öffnen (gedit, textmate)
+    mate id_rsa.pub
+----
+
+kopieren Sie den geöffneten Key
 
 
-=== Header 2
+
+
+
+
+
 
