@@ -86,9 +86,9 @@ git config --global init.defaultBranch main
 ==== SSH-Key zu Github hinzufügen
 
 * kopieren Sie den geöffneten Key
-* öffnen Sie die https://github.com/settings/keys[Github SSH und GPG settings,role=external,window=_blank]
+* öffnen Sie die https://github.com/settings/keys[Github SSH und GPG Settings,role=external,window=_blank]
 * drücken Sie *New SSH key*
-* fügen Sie anschließend den *ganzen Text* der in den *id_rsa.pub* drinnen steht ein
+* fügen Sie anschließend den *ganzen Text*, der in den *id_rsa.pub* drinnen steht ein
 
 ==== Github Arbeit mit SSH-Key Berechtigung
 
@@ -101,7 +101,7 @@ git clone git@github.com:<Username>/<Reponame>.git
 # Der vorherige Stand ist wiederhergestellt
 ----
 
-Jeder der in den Repo-Settings -> Manage access als *Collaborator* geführt ist, kann
+Jeder der in den__ Repo-Settings -> Manage access__ als *Collaborator* geführt ist, kann
 mithilfe des SSH-clones so arbeiten wie der Besitzer selbst.
 
 ==== Merge Conflict vermeiden (nicht fertig)
